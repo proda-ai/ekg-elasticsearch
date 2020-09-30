@@ -13,6 +13,4 @@ extra-package-dbs: []
 packages:
 - .
 - ekg-elasticsearch-examples
-extra-deps:
-- req-1.0.0
-resolver: lts-9.18
+resolver: lts-14.27

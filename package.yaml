@@ -1,0 +1,29 @@
+name: ekg-elasticsearch
+version: "0.4.0.0"
+synopsis: Push metrics to elasticsearch
+description: This library lets you push system metrics to a elasticsearch server.
+category: System
+author: Ben Ford
+maintainer: ben@perurbis.com
+license: BSD3
+github: cdodev/ekg-elasticsearch.git
+extra-source-files:
+  - CHANGES.md
+dependencies:
+  - base >= 4.7 && < 5
+  - bytestring
+  - data-default-class
+  - ekg-core
+  - aeson
+  - hostname
+  - http-client
+  - lens
+  - req
+  - text
+  - time
+  - unordered-containers
+library:
+  ghc-options: -Wall
+  exposed-modules:
+    - System.Remote.Monitoring.ElasticSearch
+    - System.Metrics.Json

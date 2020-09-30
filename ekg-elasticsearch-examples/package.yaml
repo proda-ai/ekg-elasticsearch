@@ -1,0 +1,13 @@
+name: ekg-elasticsearch-examples
+version: "0.1.0.0"
+category: Testing
+author: Ben Ford
+maintainer: ben@perurbis.com
+license: BSD3
+dependencies:
+  - base >= 4.7 && < 5
+  - ekg-core
+  - ekg-elasticsearch
+executables:
+  ekg-es-example:
+    main: Basic.hs

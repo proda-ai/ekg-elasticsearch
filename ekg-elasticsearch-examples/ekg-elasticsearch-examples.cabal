@@ -1,16 +1,26 @@
-name:                ekg-elasticsearch-examples
-version:             0.1.0.0
-license:             BSD3
-license-file:        LICENSE
-author:              Ben Ford
-maintainer:          ben@perurbis.com
-category:            Testing
-build-type:          Simple
-cabal-version:       >=1.10
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: be555096bf250709ec60139c6ae4b6f79f8bd5bdd122acecf1088319064d0e80
+
+name:           ekg-elasticsearch-examples
+version:        0.1.0.0
+category:       Testing
+author:         Ben Ford
+maintainer:     ben@perurbis.com
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
 
 executable ekg-es-example
-  main-is:             Basic.hs
-  build-depends:       base >=4.6 && <4.11,
-                       ekg-core,
-                       ekg-elasticsearch
-  default-language:    Haskell2010
+  main-is: Basic.hs
+  other-modules:
+      Paths_ekg_elasticsearch_examples
+  build-depends:
+      base >=4.7 && <5
+    , ekg-core
+    , ekg-elasticsearch
+  default-language: Haskell2010

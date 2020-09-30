@@ -1,41 +1,48 @@
-name:                ekg-elasticsearch
-version:             0.4.0.0
-synopsis:            Push metrics to elasticsearch
-description:
-  This library lets you push system metrics to a elasticsearch server.
-homepage:            https://github.com/cdodev/ekg-elasticsearch
-bug-reports:         https://github.com/cdodev/ekg-elasticsearch/issues
-license:             BSD3
-license-file:        LICENSE
-author:              Ben Ford
-maintainer:          ben@perurbis.com
-category:            System
-build-type:          Simple
-extra-source-files:  CHANGES.md
-cabal-version:       >=1.10
+cabal-version: 1.12
 
-library
-  exposed-modules:     
-    System.Remote.Monitoring.ElasticSearch
-    System.Metrics.Json
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: ea9a2e86835c19a65d26abe72bd58c15a7a553121fc6c4800d64f1d36756b7f1
 
-  build-depends: base >= 4.5 && < 4.11
-               , bytestring < 1.0
-               , data-default-class
-               , ekg-core >= 0.1 && < 1.0
-               , aeson >= 1.0
-               , hostname >= 1.0
-               , http-client >= 0.5
-               , lens >= 4.15.1
-               , req >= 1.0
-               , text < 1.3
-               , time < 1.9
-               , unordered-containers < 0.3
-
-  default-language:    Haskell2010
-
-  ghc-options: -Wall
+name:           ekg-elasticsearch
+version:        0.4.0.0
+synopsis:       Push metrics to elasticsearch
+description:    This library lets you push system metrics to a elasticsearch server.
+category:       System
+homepage:       https://github.com/cdodev/ekg-elasticsearch.git#readme
+bug-reports:    https://github.com/cdodev/ekg-elasticsearch.git/issues
+author:         Ben Ford
+maintainer:     ben@perurbis.com
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    CHANGES.md
 
 source-repository head
-  type:     git
+  type: git
   location: https://github.com/cdodev/ekg-elasticsearch.git
+
+library
+  exposed-modules:
+      System.Remote.Monitoring.ElasticSearch
+      System.Metrics.Json
+  other-modules:
+      Paths_ekg_elasticsearch
+  ghc-options: -Wall
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , data-default-class
+    , ekg-core
+    , hostname
+    , http-client
+    , lens
+    , req
+    , text
+    , time
+    , unordered-containers
+  default-language: Haskell2010

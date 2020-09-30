@@ -30,7 +30,6 @@ import           Control.Concurrent    (ThreadId, forkIO, threadDelay)
 import           Control.Exception     (catch)
 import           Control.Lens
 import           Control.Monad         (forever, void, when)
-import           Data.Default.Class    (def)
 import qualified Data.HashMap.Strict   as M
 import           Data.Int              (Int64)
 import           Data.Monoid           ((<>))
@@ -42,7 +41,7 @@ import           Data.Time.Clock.POSIX (getPOSIXTime)
 import           Data.Time.Format      (defaultTimeLocale, formatTime)
 import           Network.HostName      (getHostName)
 import           Network.HTTP.Req      (HttpException, POST (..),
-                                        ReqBodyLbs (..), Scheme (Http), (/:), runReq)
+                                        ReqBodyLbs (..), Scheme (Http), (/:))
 import qualified Network.HTTP.Req      as Req
 import qualified System.Metrics        as Metrics
 
@@ -202,7 +201,7 @@ flushSample store eo = do
   let body =  bulkRequestBody . BulkRequest $ (createBulk, ) <$> bulkEvts
 
   when (body /= "\n") -- no metrics, don't post
-    (void . runReq def $ Req.req POST
+    (void . Req.runReq Req.defaultHttpConfig $ Req.req POST
      (elasticURL eo)
      (ReqBodyLbs body)
      Req.ignoreResponse
